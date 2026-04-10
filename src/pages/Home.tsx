@@ -7,50 +7,49 @@ export default function Home() {
   return (
     <div className="w-full bg-white min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="relative mt-[-76px] pt-[76px] w-full min-h-[900px] bg-[#F0EFFC] rounded-b-[45px] flex flex-col items-center px-6 overflow-hidden"
-      >
-        {/* Hero Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center z-10 pt-20"
-        >
-          <h1 className="font-heading font-bold text-[60px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-6">
-            Rendi governabile <br /> la complessità del tuo studio.
-          </h1>
+      <section className="relative mt-[-76px] pt-[76px] w-full min-h-[900px] bg-[#F0EFFC] rounded-b-[45px] flex flex-col items-center px-6 overflow-hidden">
+  
+  {/* 1. BLOCCO TESTO (Limitato per leggibilità) */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="text-center z-10 pt-20"
+  >
+    <h1 className="font-heading font-bold text-[60px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-6">
+      Rendi governabile <br /> la complessità del tuo studio.
+    </h1>
 
-          <p className="font-serif font-regular text-[18px] leading-[140%] tracking-[-0.5%] text-[#545875] max-w-2xl mx-auto mb-10">
-            AlfaDocs centralizza Gestione, Relazione, Organizzazione e Analisi in un'unica piattaforma cloud. Zero installazioni, zero complessità.
-          </p>
-          
-          <div className="flex justify-center gap-4 mb-20">
-            <button className="bg-[#6761E5] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105 shadow-lg shadow-[#6761E5]/20">
-              Call to action
-            </button>
-            <button className="bg-white border border-[#6761E5] text-[#6761E5] px-8 py-4 rounded-2xl font-bold hover:bg-[#f0effc] transition-all hover:scale-105 shadow-sm">
-              Secondary
-            </button>
-          </div>
+    <p className="font-serif font-regular text-[18px] leading-[140%] tracking-[-0.5%] text-[#545875] max-w-2xl mx-auto mb-10">
+      AlfaDocs centralizza Gestione, Relazione, Organizzazione e Analisi in un'unica piattaforma cloud. Zero installazioni, zero complessità.
+    </p>
 
-          {/* New Hero Image with Animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.2, ease: "easeOut" }}
-            className="max-w-[1200px] mx-auto"
-          >
-            <img 
-              src="/heronew.png" 
-              alt="Alfadocs Dashboard" 
-              className="w-full h-auto drop-shadow-2xl"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
-        </motion.div>
-      </section>
+    <div className="flex justify-center gap-4 mb-20">
+      <button className="bg-[#6761E5] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105 shadow-lg shadow-[#6761E5]/20">
+        Call to action
+      </button>
+      <button className="bg-white border border-[#6761E5] text-[#6761E5] px-8 py-4 rounded-2xl font-bold hover:bg-[#f0effc] transition-all hover:scale-105 shadow-sm">
+        Secondary
+      </button>
+    </div>
+  </motion.div>
 
+  {/* 2. BLOCCO IMMAGINE (Portato fuori dal div di testo e allargato) */}
+  <motion.div
+    initial={{ opacity: 0, y: 100 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.0, delay: 0.2, ease: "easeOut" }}
+    className="w-full max-w-[1400px] mx-auto z-10" // <-- Aumentato a 1400px
+  >
+    <img 
+      src="/heronew.png" 
+      alt="Alfadocs Dashboard" 
+      className="w-full h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)]" // Ombra più morbida e profonda
+      referrerPolicy="no-referrer"
+    />
+  </motion.div>
+
+</section>
       {/* Pensato per il tuo settore */}
       <section className="py-24 px-6 max-w-[1280px] mx-auto">
         <h2 className="font-heading font-regular text-[54px] leading-[105%] tracking-[-3%] text-[#6761E5] mb-6">
