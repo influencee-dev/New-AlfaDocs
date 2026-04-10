@@ -24,7 +24,7 @@ export default function Home() {
       AlfaDocs centralizza Gestione, Relazione, Organizzazione e Analisi in un'unica piattaforma cloud. Zero installazioni, zero complessità.
     </p>
 
-    <div className="flex justify-center gap-4 mb-20">
+    <div className="flex justify-center gap-4 mb-10">
       <button className="bg-[#6761E5] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105 shadow-lg shadow-[#6761E5]/20">
         Call to action
       </button>
