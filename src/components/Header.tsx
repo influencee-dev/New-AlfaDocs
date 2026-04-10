@@ -72,13 +72,13 @@ export default function Header() {
                     <span className="link-arrow">&rarr;</span>
                   </Link>
                   <ul className="menu-list">
-                    <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/cartella-clinica---gestione-documentale" onClick={() => setIsMobileMenuOpen(false)}>Cartella Clinica & gestione Documentale</Link></li>
-                    <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/firma-automatica-&-grafometrica" onClick={() => setIsMobileMenuOpen(false)}>Firma Automatica & Grafometrica</Link></li>
+                    <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/cartella-clinica---gestione-documentale" onClick={() => setIsMobileMenuOpen(false)}>Cartella Clinica</Link></li>
+                    <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/firma-automatica-&-grafometrica" onClick={() => setIsMobileMenuOpen(false)}>Firma Automatica</Link></li>
                     <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/automazione-pagamenti" onClick={() => setIsMobileMenuOpen(false)}>Automazione Pagamenti</Link></li>
                     <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/scribe" onClick={() => setIsMobileMenuOpen(false)}>Scribe <span className="ai-badge">AI Powered</span></Link></li>
                     <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/patient-summary" onClick={() => setIsMobileMenuOpen(false)}>Patient Summary <span className="ai-badge">AI Powered</span></Link></li>
                     <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/integrazione-sistema-ts-e-sdi" onClick={() => setIsMobileMenuOpen(false)}>Sistema TS e SDI</Link></li>
-                    <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/integrazione-sistema-fse-2.0" onClick={() => setIsMobileMenuOpen(false)}>Sistema FSE 2.0</Link></li>
+                    <li><Link to="/soluzioni/gestione:-documentazione-e-strumenti-clinici/integrazione-sistema-fse-2.0" onClick={() => setIsMobileMenuOpen(false)}>Fascicolo sanitario Elettronico 2.0</Link></li>
                   </ul>
                 </div>
 
@@ -92,8 +92,8 @@ export default function Header() {
                   </Link>
                   <ul className="menu-list">
                     <li><Link to="/soluzioni/relazione:-comunicazione-&-marketing/campagne-marketing" onClick={() => setIsMobileMenuOpen(false)}>Campagne marketing</Link></li>
-                    <li><Link to="/soluzioni/relazione:-comunicazione-&-marketing/integrazione-whatsapp" onClick={() => setIsMobileMenuOpen(false)}>Integrazione WhatsApp</Link></li>
-                    <li><Link to="/soluzioni/relazione:-comunicazione-&-marketing/marketing&workflow" onClick={() => setIsMobileMenuOpen(false)}>Marketing & Workflow</Link></li>
+                    <li><Link to="/soluzioni/relazione:-comunicazione-&-marketing/integrazione-whatsapp" onClick={() => setIsMobileMenuOpen(false)}>Integrazione WhatsApp Web</Link></li>
+                    <li><Link to="/soluzioni/relazione:-comunicazione-&-marketing/marketing&workflow" onClick={() => setIsMobileMenuOpen(false)}>Comunicazioni Automatiche</Link></li>
                   </ul>
                 </div>
 
@@ -106,8 +106,9 @@ export default function Header() {
                     <span className="link-arrow">&rarr;</span>
                   </Link>
                   <ul className="menu-list">
-                    <li><Link to="/soluzioni/organizzazione:-agenda-&-prenotazioni/agenda-avanzata-" onClick={() => setIsMobileMenuOpen(false)}>Agenda avanzata</Link></li>
+                    <li><Link to="/soluzioni/organizzazione:-agenda-&-prenotazioni/agenda-avanzata-" onClick={() => setIsMobileMenuOpen(false)}>Agenda</Link></li>
                     <li><Link to="/soluzioni/organizzazione:-agenda-&-prenotazioni/prenotazione-online" onClick={() => setIsMobileMenuOpen(false)}>Prenotazione Online</Link></li>
+                    <li><Link to="/soluzioni/organizzazione:-agenda-&-prenotazioni/prenotazione-online" onClick={() => setIsMobileMenuOpen(false)}>Integrazioni</Link></li>
                   </ul>
                 </div>
 
@@ -122,6 +123,7 @@ export default function Header() {
                   <ul className="menu-list">
                     <li><Link to="/soluzioni/analisi:-fatturazione-e-reportistica/fatturazione" onClick={() => setIsMobileMenuOpen(false)}>Fatturazione</Link></li>
                     <li><Link to="/soluzioni/analisi:-fatturazione-e-reportistica/dashboard-&-kpi" onClick={() => setIsMobileMenuOpen(false)}>Dashboard & KPI</Link></li>
+                    <li><Link to="/soluzioni/analisi:-fatturazione-e-reportistica/dashboard-&-kpi" onClick={() => setIsMobileMenuOpen(false)}>Analisi Economiche</Link></li>
                   </ul>
                 </div>
 
