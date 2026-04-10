@@ -235,7 +235,7 @@ export default function Solution() {
                 className="font-heading font-bold text-white tracking-[-3%] leading-[105%]"
                 style={{ fontSize: '58.14px' }}
               >
-                Lorem ipsum <br /> dolor sit amet <br /> dolor lorem
+                Organizzazione: <br /> Agenda & <br /> prenotazioni
               </h1>
               
               <p 
@@ -267,7 +267,7 @@ export default function Solution() {
               style={{
                 width: '815.42px',
                 height: '818.15px',
-                top: '-126.05px',
+                top: '-166.05px',
                 left: '494.59px',
                 opacity: 1
               }}
