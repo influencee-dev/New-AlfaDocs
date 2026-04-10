@@ -16,11 +16,11 @@ export default function Home() {
     transition={{ duration: 0.5 }}
     className="text-center z-10 pt-20"
   >
-    <h1 className="font-heading font-bold text-[60px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-6">
+    <h1 className="font-heading font-bold text-[50px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-5">
       Rendi governabile <br /> la complessità del tuo studio.
     </h1>
 
-    <p className="font-serif font-regular text-[18px] leading-[140%] tracking-[-0.5%] text-[#545875] max-w-2xl mx-auto mb-10">
+    <p className="font-serif font-regular text-[18px] leading-[140%] tracking-[-0.5%] text-[#545875] max-w-2xl mx-auto mb-8">
       AlfaDocs centralizza Gestione, Relazione, Organizzazione e Analisi in un'unica piattaforma cloud. Zero installazioni, zero complessità.
     </p>
 
