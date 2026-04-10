@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --primary-blue: #6761E5; 
+    --accent-pink: #E040FB; 
+    --hover-purple: #B380F8;
+    
+    /* TEMI CHIARO (Default) */
+    --theme-primary: var(--primary-blue); 
+    --theme-accent: var(--accent-pink);
+    
+    --bg-body: #ffffff;
+    --bg-nav: #ffffff;
+    
+    /* Sfondo sfumato per i dropdown */
+    --bg-mega-menu: #ffffff; 
+    --bg-mega-menu-transparent: rgba(255, 255, 255, 0);
+    
+    --bg-card: #ffffff;
+    --bg-hover: rgba(103, 97, 229, 0.05);
+    --bg-header-hover: #ffffff;
+    
+    --text-main: #292E53;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --card-border: rgba(0,0,0,0.04);
+    
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 20px 40px rgba(103, 97, 229, 0.12);
+
+    --font-main: 'Space Grotesk', sans-serif;
+    --font-label: 'Fraunces', serif;
+    
+    --radius-md: 8px;
+    --radius-lg: 16px;       
+  }
+
+  .dark {
+    --theme-primary: var(--accent-pink); 
+    --theme-accent: var(--accent-pink);
+    
+    --bg-body: #292e53;
+    --bg-nav: #292e53;
+    
+    --bg-mega-menu: #292e53; 
+    --bg-mega-menu-transparent: rgba(41, 46, 83, 0);
+    
+    --bg-card: #292e53; 
+    --bg-hover: rgba(224, 64, 251, 0.1); /* Accent Violet light */
+    --bg-header-hover: rgba(224, 64, 251, 0.08);
+    
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --card-border: rgba(255,255,255,0.05);
+    
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 20px 40px rgba(224, 64, 251, 0.15); 
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[var(--bg-body)] text-[var(--text-main)] font-sans antialiased transition-colors duration-300 overflow-x-hidden;
+  }
+
+  /* Accessibility: Focus states */
+  a, button, input, select, textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--theme-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-body)] rounded-sm;
+  }
+}
+
+@layer components {
+  /* === HEADER NAVBAR === */
+  .header {
+    @apply bg-[var(--bg-nav)] sticky top-0 z-50 border-b border-[var(--border-color)] transition-colors duration-300;
+  }
+
+  .navbar {
+    @apply flex justify-between items-center w-full max-w-[1400px] mx-auto px-4 md:px-8 h-[76px];
+  }
+
+  .navbar-brand {
+    @apply text-2xl font-bold text-[var(--theme-primary)] no-underline tracking-tight flex items-center gap-1.5;
+  }
+
+  /* === CONTROLLI (Mobile + Dark Mode) === */
+  .nav-controls { @apply flex items-center gap-4; }
+
+  .theme-toggle {
+    @apply bg-transparent border border-[var(--border-color)] rounded-full w-9 h-9 flex items-center justify-center cursor-pointer text-[var(--text-main)] text-lg transition-all duration-200;
+  }
+  .theme-toggle:hover { @apply bg-[var(--bg-hover)] text-[var(--theme-primary)]; }
+
+  .mobile-toggle {
+    @apply hidden bg-transparent border-none cursor-pointer flex-col gap-1.5 p-1;
+  }
+  .mobile-toggle span { @apply block w-6 h-0.5 bg-[var(--text-main)] transition-all duration-300; }
+
+  /* === MENU PRINCIPALE === */
+  .navbar-menu {
+    @apply flex list-none m-0 p-0 h-full grow justify-center;
+  }
+
+  .menu-item { @apply h-full flex items-center; } /* rimosso relative per permettere absolute full-width */
+
+  .menu-item > a, .menu-item > button {
+    @apply no-underline text-[var(--text-main)] font-medium text-[0.95rem] px-4 h-full flex items-center transition-colors duration-200 bg-transparent border-none cursor-pointer;
+  }
+  .menu-item > a:hover, .menu-item > button:hover { @apply text-[var(--theme-primary)]; }
+
+  .arrow { @apply ml-1 text-[0.7rem] transition-transform duration-300 text-[var(--theme-primary)]; }
+
+  /* === MEGA MENU SOLUZIONI (Griglia a 4 Colonne) === */
+  .mega-menu {
+    @apply absolute top-full left-0 w-full opacity-0 invisible transition-all duration-300 bg-[var(--bg-nav)] border-b border-[var(--border-color)] shadow-lg z-40 rounded-[15px] mt-2;
+  }
+
+  .mega-menu-grid {
+    @apply max-w-[1400px] mx-auto py-8 px-4 md:px-8 grid grid-cols-4 gap-8;
+  }
+
+  /* === DROPDOWN SINGOLI === */
+  .dropdown-simple-wrapper {
+    @apply relative h-full flex items-center;
+  }
+
+  .dropdown-simple {
+    @apply absolute top-full left-1/2 -translate-x-1/2 opacity-0 invisible transition-all duration-300 pt-2 z-40;
+  }
+
+  .dropdown-simple .menu-card {
+    min-width: 280px;
+    @apply bg-[var(--bg-card)] shadow-xl border border-[var(--border-color)] rounded-[15px] p-4;
+  }
+
+  @media (min-width: 1025px) {
+    .menu-item.has-dropdown:hover .mega-menu,
+    .dropdown-simple-wrapper:hover .dropdown-simple { @apply opacity-100 visible translate-y-0; }
+    .menu-item.has-dropdown:hover .arrow,
+    .dropdown-simple-wrapper:hover .arrow { transform: rotate(180deg); }
+  }
+
+  /* === CARD STILE GLOBALE === */
+  .menu-card {
+    @apply bg-[var(--bg-card)] rounded-[15px] p-5 flex flex-col transition-all duration-300;
+  }
+
+  /* Hover combinato sulla griglia "Soluzioni" */
+  .mega-menu-grid .menu-card {
+    @apply border border-transparent hover:border-[var(--theme-primary)] hover:shadow-md hover:-translate-y-1 bg-[var(--bg-body)];
+  }
+
+  /* === INTESTAZIONI CLICCABILI (SOLO PER SOLUZIONI) === */
+  .card-main-link {
+    @apply flex items-center justify-between no-underline pb-3 mb-3 border-b border-[var(--border-color)] transition-all duration-200;
+  }
+  .card-main-link:hover .card-title-main { @apply text-[var(--theme-primary)]; }
+  .card-main-link:hover .link-arrow { @apply translate-x-1 text-[var(--theme-primary)]; }
+
+  /* === INTESTAZIONI STATICHE (ALTRE VOCI DI MENU) === */
+  .card-static-header {
+    @apply pb-3 mb-3 border-b border-[var(--border-color)];
+  }
+
+  /* === TITOLI (Enfasi al Nome Principale) === */
+  .card-title-wrap { @apply flex flex-col gap-1; }
+
+  .card-title-main {
+    @apply text-lg text-[var(--text-main)] m-0 font-bold leading-tight transition-colors duration-200;
+  }
+
+  .card-subtitle {
+    @apply text-sm text-[var(--text-muted)] leading-snug;
+  }
+
+  .link-arrow { @apply text-xl text-[var(--text-muted)] transition-all duration-200; }
+
+  /* === LISTE INTERNE === */
+  .menu-list { @apply list-none p-0 m-0 flex flex-col gap-1; }
+  .menu-list li a {
+    @apply no-underline flex items-center justify-between py-2 px-3 -mx-3 rounded-lg text-[var(--text-muted)] text-sm font-medium transition-all duration-200;
+  }
+  .menu-list li a:hover { @apply bg-[var(--theme-primary)]/5 text-[var(--theme-primary)] translate-x-1; }
+
+  /* === ETICHETTE (AI POWERED) === */
+  .ai-badge {
+    @apply bg-gradient-to-r from-[var(--theme-primary)] to-[var(--theme-accent)] text-white text-[0.65rem] font-bold py-0.5 px-2 rounded-full uppercase tracking-wider ml-2;
+  }
+
+  .sub-menu-list { @apply list-none pl-4 mt-1 border-l-2 border-[var(--border-color)] flex flex-col gap-1; }
+  .sub-menu-list li a { @apply py-1.5 px-3 text-xs; }
+
+  /* === CTAs === */
+  .navbar-actions { @apply flex gap-3 items-center; }
+  
+  .btn-login {
+    @apply no-underline text-[var(--theme-primary)] font-semibold text-[0.95rem] py-2.5 px-4 rounded-[var(--radius-md)] transition-colors duration-200;
+  }
+  .btn-login:hover { @apply bg-[var(--hover-purple)] text-white; }
+
+  .btn-primary {
+    @apply no-underline bg-[var(--theme-primary)] text-white py-2.5 px-5 rounded-[var(--radius-md)] font-semibold text-[0.95rem] transition-all duration-300;
+  }
+  .btn-primary:hover { @apply bg-[var(--hover-purple)] text-white -translate-y-0.5 opacity-100; }
+
+  /* === RESPONSIVE MOBILE (< 1024px) === */
+  @media (max-width: 1024px) {
+    .navbar-actions { @apply hidden; }
+    .mobile-toggle { @apply flex; }
+    
+    .navbar-menu {
+      @apply absolute top-[calc(100%+10px)] left-0 w-full h-[calc(100vh-100px)] overflow-y-auto bg-[var(--bg-nav)] border border-[var(--border-color)] rounded-2xl flex-col hidden justify-start pb-10;
+    }
+    .navbar-menu.active { @apply flex; }
+    
+    .menu-item { @apply w-full h-auto flex-col items-start; }
+    .menu-item > a {
+      @apply w-full py-5 px-6 border-b border-[var(--border-color)] justify-between box-border text-[1.1rem];
+    }
+    
+    /* Su mobile reset completo dell'allineamento orizzontale */
+    .mega-menu, .dropdown-simple {
+      @apply static shadow-none border-none hidden opacity-100 visible translate-y-0 bg-transparent w-full p-0 mt-2;
+    }
+    .mega-menu.active, .dropdown-simple.active { @apply block; }
+    
+    .mega-menu-grid { @apply grid-cols-1 py-2 px-4 gap-4; }
+    
+    .dropdown-simple .menu-card { @apply m-0 min-w-0 w-full shadow-none border-none bg-[var(--bg-body)] p-4; }
+    
+    .nav-controls { @apply gap-3; }
+  }
+}
+
