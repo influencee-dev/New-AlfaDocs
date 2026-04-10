@@ -16,7 +16,7 @@ export default function Home() {
     transition={{ duration: 0.5 }}
     className="text-center z-10 pt-20"
   >
-    <h1 className="font-heading font-bold text-[50px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-5">
+    <h1 className="font-heading font-bold text-[60px] leading-[104%] tracking-[-3%] text-[#6761E5] mb-5">
       Rendi governabile <br /> la complessità del tuo studio.
     </h1>
 
@@ -24,7 +24,7 @@ export default function Home() {
       AlfaDocs centralizza Gestione, Relazione, Organizzazione e Analisi in un'unica piattaforma cloud. Zero installazioni, zero complessità.
     </p>
 
-    <div className="flex justify-center gap-4 mb-8">
+    <div className="flex justify-center gap-4 mb-5">
       <button className="bg-[#6761E5] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#b380f8] transition-all hover:scale-105 shadow-lg shadow-[#6761E5]/20">
         Call to action
       </button>
