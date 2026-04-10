@@ -237,10 +237,6 @@ export default function Header() {
                   <li><Link to="/academy/guide-&-toolkit" onClick={() => setIsMobileMenuOpen(false)}>Guide & Toolkit</Link></li>
                   <li>
                     <Link to="/academy/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
-                    <ul className="sub-menu-list">
-                      <li><Link to="/academy/blog/4-tematiche" onClick={() => setIsMobileMenuOpen(false)}>4 tematiche</Link></li>
-                      <li><Link to="/academy/blog/insight-&-trend" onClick={() => setIsMobileMenuOpen(false)}>Insight & Trend</Link></li>
-                    </ul>
                   </li>
                   <li><Link to="/academy/webinar-&-eventi" onClick={() => setIsMobileMenuOpen(false)}>Webinar & Eventi</Link></li>
                 </ul>
