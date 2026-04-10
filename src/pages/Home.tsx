@@ -38,7 +38,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 1.0, delay: 0.2, ease: "easeOut" }}
             className="max-w-[1200px] mx-auto"
           >
             <img 
